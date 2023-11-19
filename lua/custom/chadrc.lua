@@ -1,7 +1,7 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = { theme = 'everblush' }
+M.ui = { theme = 'decay' }
 M.plugins = "custom.plugins"
 
 return M
