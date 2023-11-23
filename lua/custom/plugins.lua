@@ -26,7 +26,9 @@ local plugins = {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
-    opts = require("custom.configs.copilot")
+    opts = function()
+      return require("custom.configs.copilot")
+    end,
   },
 }
 return plugins
