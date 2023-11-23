@@ -249,11 +249,11 @@ local default_plugins = {
     end,
   },
 
-  {
-    "github/copilot.vim",
-    cmd = "Copilot",
-    lazy = false,
-  },
+  -- {
+  --   "github/copilot.vim",
+  --   cmd = "Copilot",
+  --   lazy = false,
+  -- },
 
   -- Only load whichkey after all the gui
   {

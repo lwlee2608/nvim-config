@@ -22,5 +22,11 @@ local plugins = {
       return require "custom.configs.null-ls"
     end,
   },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    opts = require("custom.configs.copilot")
+  },
 }
 return plugins
