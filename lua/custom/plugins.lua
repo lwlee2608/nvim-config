@@ -5,6 +5,7 @@ local plugins = {
       ensure_installed = {
         "gopls",
         "clangd",
+        "rust-analyzer",
       },
     },
   },
