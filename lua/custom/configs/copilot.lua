@@ -1,5 +1,5 @@
 
-opts = {
+local opts = {
   suggestion = {
     auto_trigger = true,
   },

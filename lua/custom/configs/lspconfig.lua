@@ -42,3 +42,17 @@ lspconfig.rust_analyzer.setup {
     },
   },
 }
+
+lspconfig.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"python"},
+  root_dir = util.root_pattern("setup.py", "setup.cfg", "pyproject.toml", "requirements.txt", ".git"),
+}
+
+lspconfig.lua_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"lua"},
+  root_dir = util.root_pattern(".git"),
+}
