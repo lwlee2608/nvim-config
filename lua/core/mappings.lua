@@ -41,6 +41,11 @@ M.general = {
     ["<leader>n"] = { "<cmd> set nu! <CR>", "Toggle line number" },
     ["<leader>rn"] = { "<cmd> set rnu! <CR>", "Toggle relative number" },
 
+    -- Copilot
+    ["<leader>coe"] = { "<cmd> Copilot enable <CR> <cmd> Copilot status <CR>", "Enable Copilot" },
+    ["<leader>cod"] = { "<cmd> Copilot disable <CR> <cmd> Copilot status <CR>", "Disable Copilot" },
+    ["<leader>cos"] = { "<cmd> Copilot status <CR>", "Check Copilot status" },
+
     -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
     -- empty mode is same as using <cmd> :map
