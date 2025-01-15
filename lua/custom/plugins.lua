@@ -21,10 +21,11 @@ local plugins = {
     end,
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    ft = "go",
+    -- "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
+    ft = { "go", "javascript", "typescript", "json", "ruby", "lua", "markdown" },
     opts = function()
-      return require "custom.configs.null-ls"
+        return require("custom.configs.null-ls")
     end,
   },
   {

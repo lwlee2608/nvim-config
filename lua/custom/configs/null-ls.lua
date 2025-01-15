@@ -5,6 +5,18 @@ local opts = {
   sources = {
     null_ls.builtins.formatting.gofmt,
     -- null_ls.builtins.formatting.goimports_reviser,
+    null_ls.builtins.formatting.prettier.with({
+        filetypes = {
+            "javascript",
+            "typescript",
+            "javascriptreact",
+            "typescriptreact",
+            "json",
+            "css",
+            "scss",
+            "markdown",
+        },
+    }),
   },
   on_attach = function (client, bufnr)
     if client.supports_method("textDocument/formatting") then

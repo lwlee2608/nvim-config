@@ -57,7 +57,7 @@ lspconfig.lua_ls.setup {
   root_dir = util.root_pattern(".git"),
 }
 
-lspconfig.lua_ls.setup {
+lspconfig.zls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
     cmd = { "zls" },
