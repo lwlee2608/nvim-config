@@ -56,3 +56,12 @@ lspconfig.lua_ls.setup {
   filetypes = {"lua"},
   root_dir = util.root_pattern(".git"),
 }
+
+lspconfig.lua_ls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = { "zls" },
+    filetypes = { "zig", "zir" },
+    root_dir = lspconfig.util.root_pattern("zls.json", "build.zig", ".git"),
+    single_file_support = true,
+}
