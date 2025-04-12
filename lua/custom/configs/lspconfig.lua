@@ -48,6 +48,12 @@ lspconfig.pyright.setup {
   capabilities = capabilities,
   filetypes = {"python"},
   root_dir = util.root_pattern("setup.py", "setup.cfg", "pyproject.toml", "requirements.txt", ".git"),
+  settings = {
+    python = {
+      venvPath = ".",
+      pythonPath = "./.venv/bin/python",
+    }
+  }
 }
 
 lspconfig.lua_ls.setup {
