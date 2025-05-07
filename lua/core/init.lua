@@ -60,6 +60,18 @@ end
 local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
 vim.env.PATH = vim.fn.stdpath "data" .. "/mason/bin" .. (is_windows and ";" or ":") .. vim.env.PATH
 
+
+-------------------------------------- custom ------------------------------------------
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "typescript", "typescriptreact" },
+  callback = function()
+    vim.bo.shiftwidth = 2
+    vim.bo.tabstop = 2
+    vim.bo.softtabstop = 2
+    vim.bo.expandtab = true
+  end,
+})
+
 -------------------------------------- autocmds ------------------------------------------
 local autocmd = vim.api.nvim_create_autocmd
 
