@@ -4,7 +4,6 @@ local plugins = {
     opts = {
       ensure_installed = {
         "gopls",
-        "clangd",
         "rust-analyzer",
         "mypy",
         "ruff",
@@ -36,6 +35,21 @@ local plugins = {
       return require("custom.configs.copilot")
     end,
   },
+  {
+    "Exafunction/windsurf.nvim",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "hrsh7th/nvim-cmp",
+    },
+    config = function()
+        require("codeium").setup({
+        })
+    end
+  },
+  -- {
+  --   'Exafunction/windsurf.vim',
+  --   event = 'BufEnter'
+  -- },
   {
     "rust-lang/rust.vim",
     ft = "rust",
