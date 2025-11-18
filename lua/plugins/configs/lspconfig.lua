@@ -42,6 +42,7 @@ M.capabilities.textDocument.completion.completionItem = {
 }
 
 vim.lsp.config.lua_ls = {
+  capabilities = M.capabilities,
   settings = {
     Lua = {
       diagnostics = {

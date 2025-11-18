@@ -3,6 +3,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 -- Configure LSP servers using the new vim.lsp.config API
 vim.lsp.config.gopls = {
+  capabilities = capabilities,
   cmd = {"gopls"},
   filetypes = {"go", "gomod", "gowork", "gotmpl"},
   root_markers = {"go.work", "go.mod", ".git"},
@@ -18,10 +19,12 @@ vim.lsp.config.gopls = {
 }
 
 vim.lsp.config.clangd = {
+  capabilities = capabilities,
   filetypes = {"c", "cpp", "objc", "objcpp", "cuda", "proto"},
 }
 
 vim.lsp.config.rust_analyzer = {
+  capabilities = capabilities,
   filetypes = {"rust"},
   root_markers = {"Cargo.toml"},
   settings = {
@@ -34,6 +37,7 @@ vim.lsp.config.rust_analyzer = {
 }
 
 vim.lsp.config.pyright = {
+  capabilities = capabilities,
   filetypes = {"python"},
   root_markers = {"setup.py", "setup.cfg", "pyproject.toml", "requirements.txt", ".git"},
   settings = {
@@ -44,12 +48,8 @@ vim.lsp.config.pyright = {
   }
 }
 
-vim.lsp.config.lua_ls = {
-  filetypes = {"lua"},
-  root_markers = {".git"},
-}
-
 vim.lsp.config.zls = {
+  capabilities = capabilities,
   cmd = { "zls" },
   filetypes = { "zig", "zir" },
   root_markers = {"zls.json", "build.zig", ".git"},
@@ -57,15 +57,15 @@ vim.lsp.config.zls = {
 }
 
 vim.lsp.config.tsserver = {
+  capabilities = capabilities,
   filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"},
 }
 
--- Enable LSP servers with on_attach and capabilities
+-- Enable LSP servers (lua_ls is enabled in plugins/configs/lspconfig.lua)
 vim.lsp.enable("gopls")
 vim.lsp.enable("clangd")
 vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("pyright")
-vim.lsp.enable("lua_ls")
 vim.lsp.enable("zls")
 vim.lsp.enable("tsserver")
 
