@@ -56,7 +56,7 @@ vim.lsp.config.zls = {
   single_file_support = true,
 }
 
-vim.lsp.config.tsserver = {
+vim.lsp.config.ts_ls = {
   capabilities = capabilities,
   filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"},
 }
@@ -67,7 +67,7 @@ vim.lsp.enable("clangd")
 vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("pyright")
 vim.lsp.enable("zls")
-vim.lsp.enable("tsserver")
+vim.lsp.enable("ts_ls")
 
 -- Set up autocommands to attach on_attach and capabilities
 vim.api.nvim_create_autocmd("LspAttach", {
