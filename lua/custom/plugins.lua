@@ -10,6 +10,7 @@ local plugins = {
         "ruff",
         "pyright",
         "lua-language-server",
+        "typescript-language-server",
       },
     },
   },
