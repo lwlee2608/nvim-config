@@ -60,7 +60,7 @@ local plugins = {
     end
   },
   {
-    dir = "/Users/lwlee2608/src/github/99",
+    "ThePrimeagen/99",
     lazy = false,
     config = function()
       local _99 = require("99")
@@ -68,7 +68,8 @@ local plugins = {
       local cwd = vim.uv.cwd()
       local basename = vim.fs.basename(cwd)
       _99.setup({
-        provider = providers.ClaudeCodeProvider,
+        provider = providers.OpenCodeProvider,
+        model = "openrouter/moonshotai/kimi-k2.5",
         logger = {
           level = _99.DEBUG,
           path = "/tmp/" .. basename .. ".99.debug",
