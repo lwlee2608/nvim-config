@@ -14,6 +14,7 @@ local plugins = {
   },
   {
     "neovim/nvim-lspconfig",
+    commit = "54617a1",  -- Oct 2024, compatible with Nvim 0.10.x
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
@@ -29,6 +30,7 @@ local plugins = {
   },
   {
     "zbirenbaum/copilot.lua",
+    commit = "f8d8d87",  -- Oct 2024, stable version
     cmd = "Copilot",
     event = "InsertEnter",
     opts = function()
@@ -56,6 +58,35 @@ local plugins = {
     init = function()
       vim.g.rustfmt_autosave = 1
     end
+  },
+  {
+    "ThePrimeagen/99",
+    lazy = false,
+    config = function()
+      local _99 = require("99")
+      local providers = require("99.providers")
+      local cwd = vim.uv.cwd()
+      local basename = vim.fs.basename(cwd)
+      _99.setup({
+        provider = providers.OpenCodeProvider,
+        model = "openrouter/moonshotai/kimi-k2.5",
+        logger = {
+          level = _99.DEBUG,
+          path = "/tmp/" .. basename .. ".99.debug",
+          print_on_error = true,
+        },
+        completion = {
+          source = "cmp",
+        },
+        md_files = {
+          "AGENT.md",
+        },
+      })
+
+      vim.keymap.set("n", "<leader>9f", function() _99.fill_in_function() end)
+      vim.keymap.set("v", "<leader>9v", function() _99.visual() end)
+      vim.keymap.set("v", "<leader>9s", function() _99.stop_all_requests() end)
+    end,
   },
 }
 return plugins
