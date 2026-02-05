@@ -14,6 +14,7 @@ local plugins = {
   },
   {
     "neovim/nvim-lspconfig",
+    commit = "54617a1",  -- Oct 2024, compatible with Nvim 0.10.x
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
@@ -29,6 +30,7 @@ local plugins = {
   },
   {
     "zbirenbaum/copilot.lua",
+    commit = "f8d8d87",  -- Oct 2024, stable version
     cmd = "Copilot",
     event = "InsertEnter",
     opts = function()
