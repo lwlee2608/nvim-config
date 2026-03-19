@@ -81,6 +81,7 @@ local plugins = {
       _99.setup({
         provider = providers.OpenCodeProvider,
         model = "openrouter/moonshotai/kimi-k2.5",
+        -- model = "openrouter/anthropic/claude-sonnet-4.5",
         logger = {
           level = _99.DEBUG,
           path = "/tmp/" .. basename .. ".99.debug",
