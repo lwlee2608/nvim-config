@@ -60,6 +60,17 @@ local plugins = {
     end
   },
   {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = "markdown",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {},
+    keys = {
+      { "<leader>mr", "<cmd>RenderMarkdown toggle<CR>", desc = "Toggle render markdown" },
+    },
+  },
+  {
     "ThePrimeagen/99",
     lazy = false,
     config = function()
