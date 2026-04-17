@@ -14,6 +14,7 @@ vim.lsp.config.gopls = {
       analyses = {
         unusedparams = true,
       },
+      buildFlags = {"-tags=integration"},
     },
   },
 }
