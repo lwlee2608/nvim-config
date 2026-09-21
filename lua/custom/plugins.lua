@@ -71,4 +71,9 @@ local plugins = {
     },
   },
 }
+local lock = vim.json.decode(table.concat(vim.fn.readfile(vim.fn.stdpath("config") .. "/lazy-lock.json")))
+for name in pairs(lock) do
+  table.insert(plugins, { name, pin = true })
+end
+
 return plugins
